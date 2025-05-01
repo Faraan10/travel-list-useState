@@ -1,9 +1,11 @@
 import React from "react";
 
-const Stats = () => {
+const Stats = ({ items }) => {
+  console.log(items);
+
   return (
     <footer className="stats">
-      <em>Footer here</em>
+      <em>Start adding some items to your packing list</em>
     </footer>
   );
 };
