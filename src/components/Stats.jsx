@@ -5,7 +5,14 @@ const Stats = ({ items }) => {
 
   return (
     <footer className="stats">
-      <em>Start adding some items to your packing list</em>
+      {items.length > 0 ? (
+        <em>
+          You have {items.length} {items.length > 1 ? "items" : "item"} on your
+          list, and you already packed
+        </em>
+      ) : (
+        <em>Start adding some items to your packing list</em>
+      )}
     </footer>
   );
 };
