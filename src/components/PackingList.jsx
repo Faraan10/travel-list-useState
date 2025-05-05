@@ -1,10 +1,19 @@
 import React from "react";
 import Item from "./Item";
 
-const PackingList = () => {
+const PackingList = ({ items, setItems, handleDelete, handleClear }) => {
   return (
     <div className="list">
-      <ul></ul>
+      <ul>
+        {items.map((item) => (
+          <Item
+            item={item}
+            key={item.id}
+            setItems={setItems}
+            handleDelete={handleDelete}
+          />
+        ))}
+      </ul>
 
       <div className="actions">
         <select>
@@ -12,7 +21,7 @@ const PackingList = () => {
           <option>Sort by description</option>
           <option>Sort by packed status</option>
         </select>
-        <button>Clear list</button>
+        <button onClick={() => handleClear()}>Clear list</button>
       </div>
     </div>
   );
