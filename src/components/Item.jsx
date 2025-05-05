@@ -1,20 +1,12 @@
 import React from "react";
 
-const Item = ({ item, handleToggle, handleDelete }) => {
-  // console.log(item);
-
+const Item = () => {
   return (
     <li>
-      <input
-        type="checkbox"
-        // value={item.packed}
-        onClick={() => handleToggle(item.id)}
-      />
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-        {item.quantity} {item.description}
-      </span>
-      {/* style={{ textDecoration: "line-through" }} */}
-      <button onClick={() => handleDelete(item.id)}>❌</button>
+      <input type="checkbox" />
+      {/* style={item.packed ? { textDecoration: "line-through" } : {} */}
+      <span>quantity and desc</span>
+      <button>❌</button>
     </li>
   );
 };
