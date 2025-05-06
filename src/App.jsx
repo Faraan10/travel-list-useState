@@ -36,7 +36,6 @@ const App = () => {
       <Form handleAddItems={handleAddItems} />
       <PackingList
         items={items}
-        setItems={setItems}
         handleToggle={handleToggle}
         handleDelete={handleDelete}
         handleClear={handleClear}
