@@ -1,11 +1,13 @@
 import React from "react";
 
-const Stats = () => {
+const Stats = ({ items }) => {
   return (
     <footer className="stats">
-      <em>{/* here text */}</em>
-
-      <em>Start adding some items to your packing list</em>
+      {items.length > 0 ? (
+        <em>{items.length} have been packed</em>
+      ) : (
+        <em>Start adding some items to your packing list</em>
+      )}
     </footer>
   );
 };
