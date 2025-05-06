@@ -5,7 +5,6 @@ const PackingList = ({ items, handleToggle, handleDelete, handleClear }) => {
   let sortedItems;
 
   const [sorted, setSorted] = useState("input");
-  // console.log(sorted);
 
   if (sorted === "input") {
     sortedItems = items;
