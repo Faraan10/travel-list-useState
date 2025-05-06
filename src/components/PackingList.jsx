@@ -1,7 +1,13 @@
 import React from "react";
 import Item from "./Item";
 
-const PackingList = ({ items, setItems, handleDelete, handleClear }) => {
+const PackingList = ({
+  items,
+  setItems,
+  handleToggle,
+  handleDelete,
+  handleClear,
+}) => {
   return (
     <div className="list">
       <ul>
@@ -10,6 +16,7 @@ const PackingList = ({ items, setItems, handleDelete, handleClear }) => {
             item={item}
             key={item.id}
             setItems={setItems}
+            handleToggle={handleToggle}
             handleDelete={handleDelete}
           />
         ))}

@@ -13,6 +13,15 @@ const App = () => {
     setItems((prevItems) => [...prevItems, data]);
   };
 
+  const handleToggle = (id) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
+  // console.log(items);
+
   const handleDelete = (id) => {
     // console.log(id);
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -28,6 +37,7 @@ const App = () => {
       <PackingList
         items={items}
         setItems={setItems}
+        handleToggle={handleToggle}
         handleDelete={handleDelete}
         handleClear={handleClear}
       />
