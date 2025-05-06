@@ -2,9 +2,7 @@ import React from "react";
 
 const Stats = ({ items }) => {
   let packed = items.filter((item) => item.packed).length;
-  // console.log(packed);
   const percentage = Math.round((packed / items.length) * 100);
-  console.log(percentage);
 
   return (
     <footer className="stats">
