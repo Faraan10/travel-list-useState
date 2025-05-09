@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Item from "./Item";
 
 const PackingList = ({ items, toggleItem, deleteItem, clearList }) => {
+  let sortedItems = items;
+
+  const [sortBy, setSortBy] = useState("input");
+
+  if (sortBy === "input") {
+    sortedItems = items;
+  }
+
+  if (sortBy === "description") {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
+  }
+
+  if (sortBy === "packed") {
+    sortedItems = items.slice().sort((a, b) => a.packed - b.packed);
+  }
   return (
     <div className="list">
       <ul>
-        {items?.map((item) => (
+        {sortedItems?.map((item) => (
           <Item
             key={item.id}
             item={item}
@@ -16,12 +33,12 @@ const PackingList = ({ items, toggleItem, deleteItem, clearList }) => {
       </ul>
 
       <div className="actions">
-        <select>
-          <option>Sort by input order</option>
-          <option>Sort by description</option>
-          <option>Sort by packed status</option>
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <option value="input">Sort by input order</option>
+          <option value="description">Sort by description</option>
+          <option value="packed">Sort by packed status</option>
         </select>
-        <button onClick={() => clearList()}>Clear list</button>
+        <button onClick={clearList}>Clear list</button>
       </div>
     </div>
   );
