@@ -18,11 +18,19 @@ const App = () => {
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
+  const clearList = () => {
+    setItems([]);
+  };
+
   return (
     <>
       <Logo />
       <Form handleAdd={handleAdd} />
-      <PackingList items={items} deleteItem={deleteItem} />
+      <PackingList
+        items={items}
+        deleteItem={deleteItem}
+        clearList={clearList}
+      />
       <Stats />
     </>
   );
