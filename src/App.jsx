@@ -13,6 +13,15 @@ const App = () => {
     setItems((prevItems) => [...prevItems, data]);
   };
 
+  const toggleItem = (id) => {
+    // console.log(id);
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
+
   const deleteItem = (id) => {
     // console.log(id);
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -30,6 +39,7 @@ const App = () => {
         items={items}
         deleteItem={deleteItem}
         clearList={clearList}
+        toggleItem={toggleItem}
       />
       <Stats />
     </>
