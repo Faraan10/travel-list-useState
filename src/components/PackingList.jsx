@@ -1,10 +1,14 @@
 import React from "react";
 import Item from "./Item";
 
-const PackingList = () => {
+const PackingList = ({ items, deleteItem }) => {
   return (
     <div className="list">
-      <ul>{"Map here"}</ul>
+      <ul>
+        {items?.map((item) => (
+          <Item key={item.id} item={item} deleteItem={deleteItem} />
+        ))}
+      </ul>
 
       <div className="actions">
         <select>

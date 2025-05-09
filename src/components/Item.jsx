@@ -1,13 +1,15 @@
 import React from "react";
 
-const Item = () => {
+const Item = ({ item, deleteItem }) => {
+  // console.log(item);
+
   return (
     <li>
       <input type="checkbox" />
-      {/* <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
-      </span> */}
-      <button>❌</button>
+      </span>
+      <button onClick={() => deleteItem(item.id)}>❌</button>
     </li>
   );
 };
