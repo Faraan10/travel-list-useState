@@ -41,7 +41,7 @@ const App = () => {
         clearList={clearList}
         toggleItem={toggleItem}
       />
-      <Stats />
+      <Stats items={items} />
     </>
   );
 };
