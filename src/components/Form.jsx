@@ -26,13 +26,22 @@ const Form = () => {
 
     const newData = {
       id: crypto.randomUUID(),
+      description: description,
+      quantity: quantity,
+      packed: false,
     };
-    console.log(data);
+
+    setData({
+      id: "",
+      description: "",
+      quantity: 1,
+      packed: false,
+    });
   };
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your 😍 trip?</h3>
-      <select name="quantity" onChange={handleChange}>
+      <select name="quantity" value={quantity} onChange={handleChange}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
             {num}
