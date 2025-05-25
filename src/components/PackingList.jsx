@@ -1,9 +1,14 @@
 import React from "react";
+import Item from "./Item";
 
-const PackingList = () => {
+const PackingList = ({ items, handleDelete }) => {
   return (
     <div className="list">
-      <ul></ul>
+      <ul>
+        {items.map((item) => (
+          <Item key={item.id} item={item} handleDelete={handleDelete} />
+        ))}
+      </ul>
 
       <div className="actions">
         <select>
