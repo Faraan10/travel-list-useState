@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ addItems }) => {
   const [data, setData] = useState({
     id: "",
     description: "",
@@ -30,6 +30,8 @@ const Form = () => {
       quantity: quantity,
       packed: false,
     };
+
+    addItems(newData);
 
     setData({
       id: "",
