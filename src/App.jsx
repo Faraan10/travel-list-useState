@@ -6,16 +6,21 @@ import { useState } from "react";
 
 const App = () => {
   const [items, setItems] = useState([]);
-  console.log(items);
+  // console.log(items);
 
   const addItems = (data) => {
     setItems((prevItems) => [...prevItems, data]);
   };
+
+  const handleDelete = (data) => {
+    setItems((prevItems) => prevItems.filter((item) => item.id != data));
+  };
+
   return (
     <>
       <Logo />
       <Form addItems={addItems} />
-      <PackingList />
+      <PackingList items={items} handleDelete={handleDelete} />
       <Stats />
     </>
   );
