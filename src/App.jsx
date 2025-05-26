@@ -12,6 +12,15 @@ const App = () => {
     setItems((prevItems) => [...prevItems, data]);
   };
 
+  const toggleItem = (id) => {
+    // console.log(data);
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
+
   const handleDelete = (data) => {
     setItems((prevItems) => prevItems.filter((item) => item.id != data));
   };
@@ -26,6 +35,7 @@ const App = () => {
       <Form addItems={addItems} />
       <PackingList
         items={items}
+        toggleItem={toggleItem}
         handleDelete={handleDelete}
         clearList={clearList}
       />
