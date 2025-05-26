@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item";
 
-const PackingList = ({ items, handleDelete }) => {
+const PackingList = ({ items, handleDelete, clearList }) => {
   return (
     <div className="list">
       <ul>
@@ -16,7 +16,7 @@ const PackingList = ({ items, handleDelete }) => {
           <option>Sort by description</option>
           <option>Sort by packed status</option>
         </select>
-        <button>Clear list</button>
+        <button onClick={clearList}>Clear list</button>
       </div>
     </div>
   );
