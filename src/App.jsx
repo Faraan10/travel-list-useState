@@ -38,7 +38,7 @@ const App = () => {
         handleDelete={handleDelete}
         clearList={clearList}
       />
-      <Stats />
+      <Stats items={items} />
     </>
   );
 };
