@@ -3,11 +3,14 @@ import React from "react";
 const Stats = ({ items }) => {
   const packedItems = items.filter((item) => item.packed).length;
 
+  const percentage = Math.round((packedItems * 100) / items.length);
+  // console.log(percentage);
+
   return (
     <footer className="stats">
       {items.length == 0
         ? "Start adding some items to your packing list 🚀"
-        : `You have ${items.length} items on your list and you already packed ${packedItems}`}
+        : `You have ${items.length} items on your list and you already packed ${packedItems} (${percentage}%)`}
     </footer>
   );
 };
