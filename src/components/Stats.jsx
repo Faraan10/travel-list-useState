@@ -8,8 +8,10 @@ const Stats = ({ items }) => {
 
   return (
     <footer className="stats">
-      {items.length == 0
+      {items.length === 0
         ? "Start adding some items to your packing list 🚀"
+        : packedItems === items.length
+        ? "You are all set to go ✈️"
         : `You have ${items.length} items on your list and you already packed ${packedItems} (${percentage}%)`}
     </footer>
   );
