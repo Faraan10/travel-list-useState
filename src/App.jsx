@@ -12,11 +12,10 @@ const App = () => {
     setItems((prevItems) => [...prevItems, data]);
   };
 
-  const toggleItem = (id) => {
-    // console.log(data);
+  const toggleItem = (data) => {
     setItems((prevItems) =>
       prevItems.map((item) =>
-        item.id === id ? { ...item, packed: !item.packed } : item
+        item.id === data ? { ...item, packed: !item.packed } : item
       )
     );
   };
