@@ -1,5 +1,3 @@
-import React from "react";
-
 const Stats = ({ items }) => {
   const packedItems = items.filter((item) => item.packed).length;
 
