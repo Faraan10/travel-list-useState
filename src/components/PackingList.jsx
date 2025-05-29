@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Item from "./Item";
 
 const PackingList = ({ items, toggleItem, handleDelete, clearList }) => {
+  const sortedItems = items;
+
+  const [data, setData] = useState("input");
+
+  console.log(data);
+
+  const handleChange = (e) => {
+    setData(e.target.value);
+  };
+
   return (
     <div className="list">
       <ul>
@@ -16,10 +26,10 @@ const PackingList = ({ items, toggleItem, handleDelete, clearList }) => {
       </ul>
 
       <div className="actions">
-        <select>
-          <option>Sort by input order</option>
-          <option>Sort by description</option>
-          <option>Sort by packed status</option>
+        <select onChange={handleChange}>
+          <option value="input">Sort by input order</option>
+          <option value="description">Sort by description</option>
+          <option value="status">Sort by packed status</option>
         </select>
         <button onClick={clearList}>Clear list</button>
       </div>
