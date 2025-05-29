@@ -18,6 +18,12 @@ const PackingList = ({ items, toggleItem, handleDelete, clearList }) => {
       .sort((a, b) => a.description.localeCompare(b.description));
   }
 
+  if (data == "status") {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => Number(a.packed) - Number(b.packed));
+  }
+
   const handleChange = (e) => {
     setData(e.target.value);
   };
