@@ -12,6 +12,12 @@ const PackingList = ({ items, toggleItem, handleDelete, clearList }) => {
     sortedItems = items;
   }
 
+  if (data == "description") {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
+  }
+
   const handleChange = (e) => {
     setData(e.target.value);
   };
@@ -19,7 +25,7 @@ const PackingList = ({ items, toggleItem, handleDelete, clearList }) => {
   return (
     <div className="list">
       <ul>
-        {items.map((item) => (
+        {sortedItems.map((item) => (
           <Item
             key={item.id}
             item={item}
