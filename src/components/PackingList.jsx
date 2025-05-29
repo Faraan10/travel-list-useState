@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import Item from "./Item";
 
 const PackingList = ({ items, toggleItem, handleDelete, clearList }) => {
-  const sortedItems = items;
-
   const [data, setData] = useState("input");
 
   console.log(data);
+
+  let sortedItems = items;
+
+  if (data == "input") {
+    sortedItems = items;
+  }
 
   const handleChange = (e) => {
     setData(e.target.value);
