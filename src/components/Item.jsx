@@ -1,11 +1,10 @@
-const Item = ({ item, toggleItem, handleDelete }) => {
+const Item = () => {
   return (
     <li>
-      <input type="checkbox" onClick={() => toggleItem(item.id)} />
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-        {item.quantity} {item.description}
-      </span>
-      <button onClick={() => handleDelete(item.id)}>❌</button>
+      <input type="checkbox" />
+      {/* style={item.packed ? { textDecoration: "line-through" } : {}} */}
+      <span></span>
+      <button>❌</button>
     </li>
   );
 };
