@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import Item from "./Item";
-
 const PackingList = () => {
   return (
     <div className="list">
