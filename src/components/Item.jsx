@@ -2,8 +2,10 @@ const Item = ({ item, removeItem }) => {
   return (
     <li>
       <input type="checkbox" />
-      <span></span>
-      <button>❌</button>
+      <span>
+        {item.quantity} {item.description}
+      </span>
+      <button onClick={() => removeItem(item.id)}>❌</button>
     </li>
   );
 };
