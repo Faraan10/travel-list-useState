@@ -14,7 +14,8 @@ const App = () => {
   console.log(items);
 
   const removeItem = (id) => {
-    console.log(id);
+    // console.log(id);
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   return (
