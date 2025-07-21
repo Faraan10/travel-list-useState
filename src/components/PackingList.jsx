@@ -1,7 +1,13 @@
-const PackingList = () => {
+import Item from "./Item";
+
+const PackingList = ({ items, removeItem }) => {
   return (
     <div className="list">
-      <ul></ul>
+      <ul>
+        {items.map((item) => {
+          return <Item key={item.id} item={item} removeItem={removeItem} />;
+        })}
+      </ul>
 
       <div className="actions">
         <select>

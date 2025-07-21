@@ -1,4 +1,4 @@
-const Item = () => {
+const Item = ({ item, removeItem }) => {
   return (
     <li>
       <input type="checkbox" />
