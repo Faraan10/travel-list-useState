@@ -20,7 +20,23 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(info);
+
+    const newData = {
+      id: crypto.randomUUID(),
+      description: description,
+      packed: packed,
+      quantity: quantity,
+    };
+    console.log(newData);
+
+    // AddItem(newData);
+
+    setInfo({
+      id: "",
+      description: "",
+      packed: false,
+      quantity: 1,
+    });
   };
   return (
     <form className="add-form" onSubmit={handleSubmit}>
