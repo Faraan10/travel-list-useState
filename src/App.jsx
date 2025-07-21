@@ -13,7 +13,9 @@ const App = () => {
   };
   console.log(items);
 
-  const removeItem = () => {};
+  const removeItem = (id) => {
+    console.log(id);
+  };
 
   return (
     <>
