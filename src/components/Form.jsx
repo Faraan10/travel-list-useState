@@ -27,7 +27,6 @@ const Form = ({ addItem }) => {
       packed: packed,
       quantity: quantity,
     };
-    console.log(newData);
 
     addItem(newData);
 
