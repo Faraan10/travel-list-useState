@@ -13,11 +13,13 @@ const App = () => {
   };
   console.log(items);
 
+  const removeItem = () => {};
+
   return (
     <>
       <Logo />
       <Form addItem={addItem} />
-      <PackingList />
+      <PackingList items={items} removeItem={removeItem} />
       <Stats />
     </>
   );
